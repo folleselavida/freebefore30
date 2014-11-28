@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {{! Document settings and metadata }}
+        <title>{{meta_title}}</title>
+        <meta charset="utf-8" />
+        <meta name="designer" content="Hayden Bleasel" />
+        <meta name="rating" content="general" />
+        <meta name="keywords" content="ghost, blog, {{meta_title}}" />
+
+        {{! iOS, Android and Windows stuff }}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileImage" content="{{asset 'images/windows-tile.png'}}" />
+        <meta name="msapplication-TileColor" content="#262A2D" />
+
+        {{! Robots and Viewport }}
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        {{! OpenGraph for Facebook }}
+        <meta property="og:title" content="{{meta_title}}" />
+        <meta property="og:locale" content="en_US" />
+
+        {{! Twitter Card }}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="{{meta_title}}" />
+
+        {{! Icons }}
+        <link rel="icon" href="{{asset 'favicon.ico'}}" />
+        <link rel="icon" sizes="196x196" href="{{asset 'images/android-homescreen.png'}}" />
+        <link rel="apple-touch-icon" href="{{asset 'images/apple-touch-icon.png'}}" />
+
+        {{! Prerendering and Prefetching }}
+        {{#if @blog.cover}}
+            <link rel="prerender" href="{{@blog.cover}}" />
+            <link rel="prefetch" href="{{@blog.cover}}" />
+        {{/if}}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/" />
+
+        {{! Scripts and Stylesheets }}
+        <link rel="stylesheet" href="{{asset 'css/normalize.css'}}" />
+        <link rel="stylesheet" href="{{asset 'css/bootstrap.css'}}" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset 'css/basics.css'}}" />
+        <link rel="stylesheet" href="{{asset 'css/animate.css'}}" />
+        <link rel="stylesheet" href="{{asset 'css/highlight.css'}}" />
+        <link rel="stylesheet" href="{{asset 'css/phantom.css'}}" />
+        <script src="{{asset 'js/html5shiv-printshiv.js'}}"></script>
+        <script src="{{asset 'js/respond.js'}}"></script>
+
+
+        <script src="{{asset 'js/jquery-1.9.1.min.js'}}"></script>
+        <script src="{{asset 'js/modernizr.js'}}"></script>
+        <script src="{{asset 'js/modernizr.custom.js'}}"></script>
+        <script src="{{asset 'js/jquery.js'}}"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+
+
+        <script>
+            $(document).ready(function(){
+                if (Modernizr.touch) {
+                    // show the close overlay button
+                    $(".close-overlay").removeClass("hidden");
+                    // handle the adding of hover class when clicked
+                    $(".img").click(function(e){
+                        if (!$(this).hasClass("hover")) {
+                            $(this).addClass("hover");
+                        }
+                    });
+                    // handle the closing of the overlay
+                    $(".close-overlay").click(function(e){
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if ($(this).closest(".img").hasClass("hover")) {
+                            $(this).closest(".img").removeClass("hover");
+                        }
+                    });
+                } else {
+                    // handle the mouseenter functionality
+                    $(".img").mouseenter(function(){
+                        $(this).addClass("hover");
+                    })
+                    // handle the mouseleave functionality
+                    .mouseleave(function(){
+                        $(this).removeClass("hover");
+                    });
+                }
+            });
+            
+            
+
+
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $('.myButton').click(function() {
+                console.log("funciona"); 
+                $('html, body').animate({scrollTop: '+=695px'}, 800);
+            }); 
+            });
+        </script>
+
+        <script src="{{asset 'js/classie.js'}}"></script>
+
+        <script>
+            var buttons7Click = Array.prototype.slice.call( document.querySelectorAll( '#btn-click button' ) ),
+                buttons9Click = Array.prototype.slice.call( document.querySelectorAll( 'button.btn-8g' ) ),
+                totalButtons7Click = buttons7Click.length,
+                totalButtons9Click = buttons9Click.length;
+
+            buttons7Click.forEach( function( el, i ) { el.addEventListener( 'click', activate, false ); } );
+            buttons9Click.forEach( function( el, i ) { el.addEventListener( 'click', activate, false ); } );
+
+            function activate() {
+                var self = this, activatedClass = 'btn-activated';
+
+                if( classie.has( this, 'btn-7h' ) ) {
+                    // if it is the first of the two btn-7h then activatedClass = 'btn-error';
+                    // if it is the second then activatedClass = 'btn-success'
+                    activatedClass = buttons7Click.indexOf( this ) === totalButtons7Click-2 ? 'btn-error' : 'btn-success';
+                }
+                else if( classie.has( this, 'btn-8g' ) ) {
+                    // if it is the first of the two btn-8g then activatedClass = 'btn-success3d';
+                    // if it is the second then activatedClass = 'btn-error3d'
+                    activatedClass = buttons9Click.indexOf( this ) === totalButtons9Click-2 ? 'btn-success3d' : 'btn-error3d';
+                }
+
+                if( !classie.has( this, activatedClass ) ) {
+                    classie.add( this, activatedClass );
+                    setTimeout( function() { classie.remove( self, activatedClass ) }, 1000 );
+                }
+            }
+
+            document.querySelector( '.btn-7i' ).addEventListener( 'click', function() {
+                classie.add( document.querySelector( '#trash-effect' ), 'trash-effect-active' );
+            }, false );
+        </script>
+
+
+
+        {{! Page-Specific Metadata }}
+        {{{block "meta"}}}
+
+        {{ghost_head}}
+
+    </head>
+    <body class="{{body_class}}">
+        <navbar class= "line navbar-fixed-top"> 
+            <div class="container-fluid">
+                <div class="navbar-header pull-left col-md-12"> 
+                    <a href="/"><div class= "contador contador2" id="countbox1"></div></a>
+                </div>
+
+        </div>
+    </navbar>
+        <div class="main">
+            {{{body}}}
+        </div>
+
+
+        <footer class="animated fadeIn footer full" id="footer">
+            <div class="container text-center">
+                <p class="copyright"><span>Made by {{@blog.title}}.</span> </p>
+               
+            </div>
+        </footer>
+
+        {{ghost_foot}}
+
+        {{! Deferred scripts }}
+        <script src="{{asset 'js/fastclick.js'}}"></script>
+        <script src="{{asset 'js/stellar.js'}}"></script>
+        <script src="{{asset 'js/highlight.js'}}"></script>
+        <script src="{{asset 'js/phantom.js'}}"></script>
+        <script type="text/javascript" src="{{asset "js/contador.js"}}"></script>
+
+    </body>
+</html>

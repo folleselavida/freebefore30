@@ -1,0 +1,37 @@
+{{#foreach posts}}
+    
+    <div class="animated fadeIn homePost col-md-4">
+        <div class="sample animated fadeIn ">
+           
+               
+               <div class="col-md-4 animated fadeInUp postHome">
+                   {{#author}}
+                    <img class="author-image img-responsive" src="{{image}}" alt="{{name}}" />
+                    {{/author}}
+               </div>
+                <div class="col-md-8 title animated fadeInUp postHome">
+                    <a href="{{url}}">
+                        <h1>{{title}}</h1>
+                    </a>
+                    {{#author}}
+                    <br>
+                    <a href="{{url}}" class="name"> By {{name}} </a>
+                    {{/author}}
+                </div>
+                {{!> sidebar}}
+         
+        </div>
+                
+        <article class="col-xs-12 excerpt animated fadeIn {{post_class}}">
+           
+                <div class="col-sm-12">
+                    <p class="textPostHome">{{excerpt words="25"}}&hellip;</p>
+                    <a href="{{url}}" class="article">Read more...</a>
+                </div>
+
+                
+        </article>
+
+    </div>
+
+{{/foreach}}

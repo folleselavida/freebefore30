@@ -1,0 +1,71 @@
+
+/*----- header -----*/
+#mainheader { position:relative; width:984px; height:90px; margin:-10px -3px -2em -1px; background:url(https://devimages.apple.com.edgekey.net/iphone/images/header.gif) no-repeat;  }
+
+#mainheader h1 { display:inline; }
+#mainheader h1 a { display:block; float:left; width:330px; height:60px; text-indent:-9999px; outline:none; moz-outline:none; cursor:default; }
+
+#mainheader p { float:right; margin:2.3em 15px 0 0; color:#fff; font-size:10px; font-weight:normal; text-shadow:#777 1px 1px 1px; cursor:default; }
+#mainheader p a,
+#mainheader p strong { float:left; margin:.4em .6em; color:#fff; }
+#mainheader p b { float:left; width:2px; height:2.3em; margin:0 .6em; text-indent:-9999px; background:url(https://devimages.apple.com.edgekey.net/iphone/images/header_separator.gif) repeat-y 0 0; }
+
+
+/*----- pages -----*/
+body#samples #main #header h1 { padding-top:.4em; }
+body#samples #main ul.featured { overflow:hidden; margin:0 0 1em; padding:0 0 1px; font-size:12px; }
+body#samples #main ul.featured li { clear:both; padding-left:210px; border-top:1px solid #ccc; }
+body#samples #main ul.featured li h3 { margin-top:4.6em; }
+body#samples #main ul.featured li h3 a { color:#333; }
+body#samples #main ul.featured li h3 a:hover { color:#366088; }
+body#samples #main ul.featured li img.left { margin:1.6em 0 1em -195px; }
+body#samples #main ul.featured p.button { font-size:11px; }
+
+body#docs #main #header { padding-left:80px; }
+body#docs #main ul { padding-bottom:0; }
+body#docs #main ul li { padding-bottom:1.6em; font-size:12px; font-weight:bold; }
+
+body.codinghowtos #main #header { padding-left:90px; }
+body.codinghowtos #main #header h1 { margin-top:0; }
+body.codinghowtos #main ul { font-weight:bold; }
+body.codinghowtos #main ul li ul.stripe { padding:.6em 0 1em; font-weight:normal; }
+body.codinghowtos #main ul li ul.stripe li { padding:.4em .6em; background:#fff; }
+body.codinghowtos #main ul li ul.stripe li.odd { background:#eee; }
+
+/*----- messages -----*/
+#main #content .message { position:relative; overflow:hidden; margin-bottom:1.6em; padding:12px 15px .6em; background:#f2f2f2; -webkit-border-radius:5px; -moz-border-radius:5px; -o-border-radius:5px; -khtml-border-radius:5px; border-radius:5px; }
+#main #content .message ul { margin:0; padding:2px 0 1px 25px; background:url(https://devimages.apple.com.edgekey.net/global/elements/icons/check_18x18.png) no-repeat 0 0; behavior:url(https://devimages.apple.com.edgekey.net/assets/scripts/lib/iepngfix.htc); }
+#main #content .message ul.alert { padding-left:30px; background:url(https://devimages.apple.com.edgekey.net/global/elements/icons/warning_23x20.png) no-repeat 0 0; }
+#main #content .message ul li { margin:0; padding:0 0 .8em; color:#333; }
+
+#main #content .message.error { background-color:#ecd0d0}
+#main #content .message.error ul { padding-top:1px; margin-right:60px; background:url(https://devimages.apple.com.edgekey.net/global/elements/icons/warning_red_17x17.png) no-repeat 0 0; }
+
+#main #content .message a.close { position:absolute; top:5px; right:8px; cursor:pointer; }
+#main #content .message.hidden { height:0; margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0; }
+
+/* expandables */
+#main .expandlabel { color:#000; background:url(https://devimages.apple.com.edgekey.net/iphone/images/portal/transparent_arrow_expand.gif) no-repeat 0 -45px; }
+#main .expandlabel.closed { background-position:0 4px; }
+
+/* mini popups */
+#main a.minipopuptrigger { outline:0; display:inline; cursor:pointer; }
+
+#main .minipopup { position:absolute !important; display:none; z-index:900; }
+#main .minipopup.selected { display:block; }
+
+#main .minipopup .middle { width:158px; padding:5px 32px 0; background:url(https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_bg.png) repeat-y; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_bg.png', sizingMethod='scale'); }
+#main .minipopup .top { position:absolute; top:-14px; left:0; width:222px; height:14px; font-size:1px; background:url(https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_bgtop.png) no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_bgtop.png', sizingMethod='scale'); }
+#main .minipopup .bottom { position:absolute; bottom:-28px; left:0; width:222px; height:30px; font-size:1px; background:url(https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_bgbottom.png) no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_bgbottom.png', sizingMethod='scale'); }
+
+#main .minipopup.small .top { background:url(https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_small_bgtop.png) no-repeat; width:130px; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_small_bgtop.png', sizingMethod='crop'); }
+#main .minipopup.small .middle { width:66px; background:url(https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_small_bg.png) repeat-y; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_small_bg.png', sizingMethod='scale'); }
+#main .minipopup.small .bottom { background:url(https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_small_bgbottom.png) no-repeat; width:130px; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://devimages.apple.com.edgekey.net/iphone/images/portal/minipopup_small_bgbottom.png', sizingMethod='crop'); }
+
+#main .minipopup a { position:relative; }
+#main .minipopup a.close { float:right; width:14px; height:14px; margin:0 -5px -14px -9px; text-indent:-9999px; background:url(http://developer.apple.com/images/closebutton.png) no-repeat 0 0; behavior:url(https://devimages.apple.com.edgekey.net/assets/scripts/lib/iepngfix.htc); }
+#main .minipopup p { margin-bottom:2px; }
+#main .minipopup p.buttons { text-align:right; }
+#main .minipopup ul { margin-bottom:0; }
+#main .minipopup ul li { padding-bottom:4px; }
+
